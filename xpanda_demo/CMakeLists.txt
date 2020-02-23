@@ -1,0 +1,2 @@
+AUX_SOURCE_DIRECTORY(src DIR_XPANDA_DEMO)
+add_library(xpanda_demo ${DIR_XPANDA_DEMO})
