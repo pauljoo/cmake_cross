@@ -2,7 +2,7 @@
 // Created by jianghuiyao on 2020/2/23.
 //
 #include "include/cef_app.h"
-#include "xpanda_cef/src/XpandaCefApp.h"
+#include "src/XpandaCefApp.h"
 
 int main(int argc, char* argv[]) {
     // Structure for passing command-line arguments.
@@ -10,7 +10,7 @@ int main(int argc, char* argv[]) {
     CefMainArgs main_args(argc, argv);
 
     // Optional implementation of the CefApp interface.
-    CefRefPtr<XpandaCefApp> app(new XpandaCefApp);
+    CefRefPtr<XpandaCefApp> app(new XpandaCefApp());
 
     // Execute the sub-process logic, if any. This will either return immediately for the browser
     // process or block until the sub-process should exit.

@@ -1,3 +1,8 @@
+## 命令
+```shell
+cmake .
+make
+```
 ## 工程目录
 
 ### exe

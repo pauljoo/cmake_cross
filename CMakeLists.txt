@@ -16,25 +16,20 @@ include_directories(${GTK3_INCLUDE_DIRS})
 link_directories(${GTK3_LIBRARY_DIRS})
 add_definitions(${GTK3_CFLAGS_OTHER})
 
-
 find_package(libcef REQUIRED)
 
-
 add_subdirectory(xpanda_demo)
-
-add_subdirectory(xpanda_cef)
 
 add_executable(cmake_cross main.cpp)
 
 add_executable(cmake_cross_gtk main_gtk.cpp)
 
-add_executable(cmake_cross_cef main_cef.cpp)
-
-MESSAGE(STATUS ${LIBDB_CXX_LIBRARIES})
+add_executable(cmake_cross_cef main_cef.cpp src/XpandaCefApp.cpp)
 
 target_link_libraries(cmake_cross xpanda_demo)
 target_link_libraries (cmake_cross_gtk ${GTK3_LIBRARIES})
-target_link_libraries (cmake_cross_cef ${GTK3_LIBRARIES} xpanda_cef)
+target_link_libraries (cmake_cross_cef ${GTK3_LIBRARIES} ${LIBCEF_LIBRARY} ${LIBCEF_DLL_LIBRARY})
+
 IF(WIN32)
     MESSAGE(STATUS “This is Windows.”)
 ELSEIF(UNIX)
